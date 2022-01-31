@@ -1,0 +1,156 @@
+<!--Anabel Hilerio-->
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="stylesheets/hilerio23.css"/>
+	<script
+	 src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+</head>
+<body>
+
+	<h1>Cheesecake Order Form</h1>
+	
+	<!-- image of the cheesecake -->
+	<img 	src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Mondays_at_Il_Forno_-		_Cheesecake_with_strawberry_sauce.jpg/1200px-Mondays_at_Il_Forno_-		_Cheesecake_with_strawberry_sauce.jpg" width="200" height="200">
+
+	<!-- form section of the website -->
+	<div id="form">
+		<p> Quantity Topping </p>
+		<table>
+			<tr>
+				<!-- Here is the drop down menu for how many quantity options are available -->
+				<td>
+					<select name="quantity" id="quantity">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+				</td>
+				
+				<td></td>
+				<td></td>
+				<td></td>
+			
+				<!-- Here are the radio buttons with the topping options -->
+				<td>
+					<div>
+						<input type="radio" id="plain" name="topping" value="plain"
+							checked>
+						<label for="plain">Plain</label>
+					</div>
+					<div>
+						<input type="radio" id="cherry" name="topping" value="cherry">
+						<label for="cherry">Cherry</label>
+					</div>
+
+					<div>
+						<input type="radio" id="chocolate" name="topping" value="chocolate">
+						<label for="chocolate">Chocolate</label>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<!-- Here is where the textbox is created to include special elements -->
+		<p> Notes: </p>
+		
+		<textarea id="notes" name="notes" rows="5" cols="50" placeholder="Enter any special instructions here."></textarea>
+		<br></br>
+		<button onclick="order()">Order</button>
+
+	</div>
+	
+	<div id="result">
+		<h2> Thank you! Your order has been placed </h2>
+		<div id = "finalOrder">
+			<p>Detail of order:</p>
+		</div>
+		
+		<table>
+			<tr>
+				<td>
+					<div>
+						<p> Quantity: </p>
+					</div>
+				</td>
+				<td>
+					<div id="finalQuantity">
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td>
+					<div>
+						<p> Toppings: </p>
+					</div>
+				</td>
+				<td>
+					<div id="finalTopping">
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td>
+					<div>
+						<p> Special Instructions: </p>
+					</div>
+				</td>
+				<td>
+					<div id="special">
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Contain the unordered list of last month's orders -->
+	<table>
+		<tr>
+			<td>
+				<div>
+					<h2>Total Orders in </h2>
+				</div>
+			</td>
+			<td>
+				<nav class="nav">
+				  <ul class="navigation">
+					<li id="monthSelector"><a id="shownMonth" href="javascript:void(0);">Jan <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+					  <ul class="specificMonth">
+						<li><a onclick="selectMonth('Jan')" href="#">Jan</a></li>
+						<li><a onclick="selectMonth('Feb')" href="#">Feb</a></li>
+						<li><a onclick="selectMonth('Mar')" href="#">Mar</a></li>
+						<li><a onclick="selectMonth('Apr')" href="#">Apr</a></li>
+						<li><a onclick="selectMonth('May')" href="#">May</a></li>
+						<li><a onclick="selectMonth('Jun')" href="#">Jun</a></li>
+						<li><a onclick="selectMonth('Jul')" href="#">Jul</a></li>
+						<li><a onclick="selectMonth('Aug')" href="#">Aug</a></li>
+						<li><a onclick="selectMonth('Sep')" href="#">Sep</a></li>
+						<li><a onclick="selectMonth('Oct')" href="#">Oct</a></li>
+						<li><a onclick="selectMonth('Nov')" href="#">Nov</a></li>
+						<li><a onclick="selectMonth('Dec')" href="#">Dec</a></li>
+					  </ul>
+					</li>
+				  </ul>
+				</nav>
+			</td>
+		</tr>
+	</table>
+	<ul>
+		<li>11 cherry</li>
+		<li>17 chocolate</li>
+		<li>31 plain</li>
+	</ul>
+	
+	<br></br>
+	
+	<script type="text/javascript" src="javascripts/indexJS.js"></script>
+
+</body>
+</html>
