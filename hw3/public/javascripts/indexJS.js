@@ -28,4 +28,15 @@ function order(){
 
 function selectMonth(monthVal){
     $("#shownMonth").text(monthVal);
+    $.post("/orders", {
+        "month" : monthVal
+    },
+    function(data, status){
+        var orderArray = JSON.parse(data);
+        var textInfo = "";
+        for(let i = 0; i < orderArray.length; i++){
+            textInfo += "<li>" + orderArray[i].topping + " " + orderArray[i].quantity + "</li>";
+        }
+        $("#orderDetails").html(textInfo);
+    });
 }
